@@ -1,0 +1,20 @@
+{
+  "name": "temperature-converter-rest",
+  "version": "1.0.0",
+  "description": "Temperature Converter Rest",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "test"
+  },
+  "author": "Enrique Sanchez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
