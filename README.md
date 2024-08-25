@@ -18,7 +18,12 @@ Step 1
 
 8) Add project to github
 
-Step2
+Step 2
 1) Create routes
 2) Add routes to app.js
 3) Test using postman
+
+Step 3
+1) Create Value Object
+2) Log the Input
+3) Return the Value Object
