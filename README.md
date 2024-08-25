@@ -17,3 +17,8 @@ Step 1
     - npm run dev
 
 8) Add project to github
+
+Step2
+1) Create routes
+2) Add routes to app.js
+3) Test using postman
