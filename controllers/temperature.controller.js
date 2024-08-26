@@ -1,4 +1,4 @@
-const TemperatureVO = require ('../valueobjects/temperature.vo');
+const temperatureService = require('../services/temperature.service');
 const { validationResult } = require('express-validator');
 
 /**
@@ -12,9 +12,11 @@ exports.postConvertTemperature = function (req, res) {
     if (result.errors.length > 0) {
         res.status(400).json({ success: false, error: result });
     } else {
-        const input = req.body;
-        console.log(input);
-        const temperature = new TemperatureVO(20, "CELSIUS");
+        const temperatureToConvert = req.body;
+        console.log(temperatureToConvert);
+        console.log(req.params['unitToConvert']);
+        const temperature = temperatureService.convert(temperatureToConvert, req.params['unitToConvert']);
+        console.log(temperature);
         res.json(temperature).status(200);
     }
 };
