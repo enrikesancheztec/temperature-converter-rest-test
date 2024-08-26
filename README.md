@@ -27,3 +27,15 @@ Step 3
 1) Create Value Object
 2) Log the Input
 3) Return the Value Object
+
+Step 4
+1) Add the controller
+2) Add the validations
+    - npm install express-validator
+
+Step 5
+1) Add service
+
+Step 6
+1) Add service unit tests
+    - npm install --save-dev jest
