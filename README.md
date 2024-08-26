@@ -39,3 +39,8 @@ Step 5
 Step 6
 1) Add service unit tests
     - npm install --save-dev jest
+
+Step 7
+1) Add controller unit tests
+    - npm install supertest --save-dev
+    - Add mocks to controller tests
