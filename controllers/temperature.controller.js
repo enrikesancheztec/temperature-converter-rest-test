@@ -6,7 +6,7 @@ const { validationResult } = require('express-validator');
  * @param {Request} req - Temperature to be converted
  * @param {Response} res - Converted temperature
  */
-exports.postConvertTemperature = function (req, res) {    
+exports.postConvertTemperature = async function (req, res) {    
     let result = validationResult(req);
 
     if (result.errors.length > 0) {
@@ -15,7 +15,7 @@ exports.postConvertTemperature = function (req, res) {
         const temperatureToConvert = req.body;
         console.log(temperatureToConvert);
         console.log(req.params['unitToConvert']);
-        const temperature = temperatureService.convert(temperatureToConvert, req.params['unitToConvert']);
+        const temperature = await temperatureService.convert(temperatureToConvert, req.params['unitToConvert']);
         console.log(temperature);
         res.json(temperature).status(200);
     }
