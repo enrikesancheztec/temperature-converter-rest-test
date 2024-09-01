@@ -44,3 +44,34 @@ Step 7
 1) Add controller unit tests
     - npm install supertest --save-dev
     - Add mocks to controller tests
+
+Step 8
+1) Create database
+    - Install MySQL
+    - Create database in MySQL
+        - create database temperature;
+2) Add sequelize library
+    - https://sequelize.org/docs/v6/getting-started/
+    - npm install --save sequelize
+    - npm install --save mysql2
+    - Create config file
+
+3) Add env files support
+    - npm install dotenv --save
+    - Add env extension to gitignore
+    - Create env file (this file is not pushed to repo)
+
+4) Add sequelize to the app
+    - Modify app.js
+
+5) Create model
+    - Create model folder/file
+    - Add sequelize operation to the service
+
+6) Validate
+    - Start service
+    - Send test request in Postman
+    - Validate records in DB
+        - use temperatureTest;
+        - show tables;
+        - select * from conversions;
