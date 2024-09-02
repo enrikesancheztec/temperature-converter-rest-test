@@ -1,28 +1,33 @@
-const TemperatureVO = require ('../../valueobjects/temperature.vo');
+const TemperatureVO = require('../../valueobjects/temperature.vo');
 const temperatureService = require('../../services/temperature.service');
+const db = require("../../models");
 
 describe("TemperatureUtil unit tests", () => {
-    test('Given Temperature 20C When convert Then 68F', () => {
-      // GIVEN
-      let input = new TemperatureVO(20, "CELSIUS");
-      let expectedOutput = new TemperatureVO(68, "FAHRENHEIT");
+  beforeEach(() => {
+    jest.spyOn(db.Conversion, "create").mockReturnValue({});
+  });
 
-      // WHEN
-      let actualOutput = temperatureService.convert(input, "FAHRENHEIT");
+  test('Given Temperature 20C When convert Then 68F', async () => {
+    // GIVEN
+    let input = new TemperatureVO(20, "CELSIUS");
+    let expectedOutput = new TemperatureVO(68, "FAHRENHEIT");
 
-      // THEN
-      expect(actualOutput).toStrictEqual(expectedOutput);
-    });
+    // WHEN
+    let actualOutput = await temperatureService.convert(input, "FAHRENHEIT");
 
-    test('Given Temperature 68F When convert Then 20C', () => {
-        // GIVEN
-        let input = new TemperatureVO(68, "FAHRENHEIT");
-        let expectedOutput = new TemperatureVO(20, "CELSIUS");
-  
-        // WHEN
-        let actualOutput = temperatureService.convert(input, "CELSIUS");
-  
-        // THEN
-        expect(actualOutput).toStrictEqual(expectedOutput);
-      });
+    // THEN
+    expect(actualOutput).toStrictEqual(expectedOutput);
+  });
+
+  test('Given Temperature 68F When convert Then 20C', async () => {
+    // GIVEN
+    let input = new TemperatureVO(68, "FAHRENHEIT");
+    let expectedOutput = new TemperatureVO(20, "CELSIUS");
+
+    // WHEN
+    let actualOutput = await temperatureService.convert(input, "CELSIUS");
+
+    // THEN
+    expect(actualOutput).toStrictEqual(expectedOutput);
+  });
 });

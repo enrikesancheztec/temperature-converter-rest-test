@@ -19,6 +19,6 @@ const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-db.Conversion = require("./conversion.model.js")(sequelize, Sequelize);
+db.Conversion = require("./conversion.model")(sequelize, Sequelize);
 
 module.exports = db;
