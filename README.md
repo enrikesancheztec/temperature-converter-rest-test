@@ -75,3 +75,7 @@ Step 8
         - use temperatureTest;
         - show tables;
         - select * from conversions;
+
+Step 9
+    1) Update Unit Tests
+Step
