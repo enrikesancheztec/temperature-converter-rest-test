@@ -1,4 +1,4 @@
-const TemperatureVO = require ('../valueobjects/temperature.vo');
+const TemperatureVO = require('../valueobjects/temperature.vo');
 const db = require('../models');
 
 /**
@@ -21,12 +21,11 @@ exports.convert = async function(temperature, unit) {
     }
 
     await db.Conversion.create({
-        id: 0,
         temperatureValue: temperature.value,
         temperatureUnit: temperature.unit,
         convertedValue: convertedTemperature.value,
         convertedUnit: convertedTemperature.unit,
-         conversionDate: new Date()
+        conversionDate: new Date()
     });
 
     return convertedTemperature;
