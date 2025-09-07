@@ -75,3 +75,9 @@ Step 8
         - use temperatureTest;
         - show tables;
         - select * from conversions;
+Step 9
+1) Fix Tests
+Step 10
+1) Uptate Express Version
+2) Rename Unit Tests
+3) Create integration Test

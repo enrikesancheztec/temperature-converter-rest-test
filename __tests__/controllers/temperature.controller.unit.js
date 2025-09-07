@@ -8,6 +8,11 @@ jest.mock("../../services/temperature.service", () => ({
 }));
 
 describe("Temperature Controller Tests", () => {
+    afterAll(async () => {
+        await server.close();
+        temperatureService.convert.mockClear();
+    });
+
     test("Given Temperature with missing value When convert Then Error 400", async () => {
         return request(server)
             .post('/v1/temperature/convert/FAHRENHEIT')
